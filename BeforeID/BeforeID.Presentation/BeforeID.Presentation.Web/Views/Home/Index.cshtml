@@ -1,13 +1,38 @@
-﻿<div class="row">
-    
-    <div class="col-md-4">
-        
-    </div>
-    
-</div>
+﻿@model BeforeID.Common.ViewModels.Page.PostPageViewModel
 
-<div class="row">
-    <div class="col-md-12">
-        
+
+<div id="post-page">
+
+    <div id="post-form">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-xs-2" id="category-text" for="post-text">@Model.CategoryText</label>
+                        <div class="col-xs-9">
+                            <input id="post-text" placeholder="Сакам да...." class="form-control" type="text" />
+                        </div>
+
+                        <div class="col-xs-1">
+                            <button class="btn btn-primary">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Објави
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="post-overview">
+
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+
     </div>
 </div>

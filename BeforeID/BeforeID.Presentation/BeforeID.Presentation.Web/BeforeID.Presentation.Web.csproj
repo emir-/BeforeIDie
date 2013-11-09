@@ -197,7 +197,24 @@
     <Content Include="Views\Shared\_Script_Loading.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\BeforeID.Common\BeforeID.Common.Infrastructure\BeforeID.Common.Infrastructure.csproj">
+      <Project>{16F6319A-E00A-438C-9194-02FB816F79E3}</Project>
+      <Name>BeforeID.Common.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BeforeID.Common\BeforeID.Common.ViewModels\BeforeID.Common.ViewModels.csproj">
+      <Project>{556ECC1C-7284-402A-8F35-4FB02202A8E6}</Project>
+      <Name>BeforeID.Common.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BeforeID.Data\BeforeID.Data.Mapping\BeforeID.Data.Mapping.csproj">
+      <Project>{C2926BED-51A0-448C-B23A-B467043B5925}</Project>
+      <Name>BeforeID.Data.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BeforeID.Data\BeforeID.Data.Model\BeforeID.Data.Model.csproj">
+      <Project>{67CB1C03-D0DF-4B5D-8A98-11F34C9B3012}</Project>
+      <Name>BeforeID.Data.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

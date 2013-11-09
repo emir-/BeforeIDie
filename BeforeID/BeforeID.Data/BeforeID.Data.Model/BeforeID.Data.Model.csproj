@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201311062208498_InitialDatabase.Designer.cs">
       <DependentUpon>201311062208498_InitialDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311092143360_AddAliasToCategoryField.cs" />
+    <Compile Include="Migrations\201311092143360_AddAliasToCategoryField.Designer.cs">
+      <DependentUpon>201311092143360_AddAliasToCategoryField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seeders\CategorySeed\BaseCategorySeeder.cs" />
@@ -75,6 +79,15 @@
     <EmbeddedResource Include="Migrations\201311062208498_InitialDatabase.resx">
       <DependentUpon>201311062208498_InitialDatabase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311092143360_AddAliasToCategoryField.resx">
+      <DependentUpon>201311092143360_AddAliasToCategoryField.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BeforeID.Common\BeforeID.Common.Infrastructure\BeforeID.Common.Infrastructure.csproj">
+      <Project>{16F6319A-E00A-438C-9194-02FB816F79E3}</Project>
+      <Name>BeforeID.Common.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

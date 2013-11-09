@@ -18,6 +18,11 @@ namespace BeforeID.Data.Model.Entities
         /// </summary>
         public string CategoryText { get; set; }
 
+        /// <summary>
+        /// The alias for the category. Used to query default categories.
+        /// </summary>
+        public string CategoryAlias { get; set; }
+
         #endregion
 
         #region Navigation Properties
