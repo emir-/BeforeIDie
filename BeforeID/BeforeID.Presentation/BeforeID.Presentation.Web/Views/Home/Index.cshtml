@@ -1,20 +1,19 @@
 ﻿@model BeforeID.Common.ViewModels.Page.PostPageViewModel
 
-
 <div id="post-page">
-
-    <div id="post-form">
+    
+    <div id="post-form" data-bind="with:Form">
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-horizontal">
                     <div class="form-group">
                         <label class="col-xs-2" id="category-text" for="post-text">@Model.CategoryText</label>
                         <div class="col-xs-9">
-                            <input id="post-text" placeholder="Сакам да...." class="form-control" type="text" />
+                            <input id="post-text" placeholder="Сакам да...." class="form-control" type="text" data-bind="value:PostText" />
                         </div>
-
+                        
                         <div class="col-xs-1">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" data-bind="click:PublishPost">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 Објави
                             </button>
@@ -26,7 +25,7 @@
 
     </div>
 
-    <div id="post-overview">
+    <div id="post-overview" data-bind="with:Posts">
 
         <div class="row">
             <div class="col-xs-12">
@@ -36,3 +35,17 @@
 
     </div>
 </div>
+
+@section scripts{
+    <script type="text/javascript">
+        
+        $(function () {
+            var viewModel = BID.ViewModels.Pages.Posts.Main;
+            
+            ko.applyBindings(viewModel, document.getElementById('post-page'));
+
+            viewModel.Init();
+        });
+
+    </script>
+}
