@@ -38,6 +38,12 @@
     
     @Html.Partial("_Script_Loading")
     
+    <script type="text/javascript">
+        $(function() {
+            BID.App.Init();
+        });
+    </script>
+     
     @RenderSection("scripts", required: false)
 </body>
 </html>

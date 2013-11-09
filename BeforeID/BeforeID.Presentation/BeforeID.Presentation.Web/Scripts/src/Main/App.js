@@ -2,8 +2,8 @@
 
     var app = (function () {
 
-        var init = function(parameters) {
-
+        var init = function() {
+            console.log("Initializing app");
         };
 
         return {
@@ -11,6 +11,7 @@
         };
     })();
 
-    bid.App = app;
-    
-})(BID = window.BID || {}, jquery);
+    // namespace the main app module
+    bid.namespace("App", app);
+
+})(BID = window.BID || {}, jQuery);
