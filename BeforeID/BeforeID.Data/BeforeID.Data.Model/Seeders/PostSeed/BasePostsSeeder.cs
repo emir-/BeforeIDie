@@ -15,7 +15,7 @@ namespace BeforeID.Data.Model.Seeders.PostSeed
                             new Post()
                             {
                                 CategoryId = SeededCategoryIds.BIDCategory,
-                                Text = "Да ја видам уште еднаш",
+                                Text = "Да ја видам уште еднаш...",
                                 ColorCode = "#46A229",
                                 PostUserName = "Бетмен",
                                 PostUserCity = "Скопје",
@@ -26,7 +26,7 @@ namespace BeforeID.Data.Model.Seeders.PostSeed
                             new Post()
                             {
                                 CategoryId = SeededCategoryIds.BIDCategory,
-                                Text = "Да одам на одмор на Тахити",
+                                Text = "Да одам на одмор на Тахити...",
                                 ColorCode = "#37B6CE",
                                 PostUserName = "Бетмен",
                                 PostUserCity = "Скопје",
@@ -36,7 +36,7 @@ namespace BeforeID.Data.Model.Seeders.PostSeed
                             new Post()
                             {
                                 CategoryId = SeededCategoryIds.BIDCategory,
-                                Text = "Да вистински се заљубам",
+                                Text = "Да вистински се заљубам...",
                                 ColorCode = "#F93E58",
                                 PostUserName = "Бетмен",
                                 PostUserCity = "Скопје",

@@ -35,7 +35,7 @@ namespace BeforeID
             // add app script bundles
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
                 "~/Scripts/src/Main/namespace.js",
-                
+
                 // utilities
                 "~/Scripts/src/Common/AmplifyKeys.js",
                 "~/Scripts/src/Common/Bindings.js",
@@ -57,18 +57,16 @@ namespace BeforeID
             // add basic third party content bundles
             bundles.Add(new StyleBundle("~/Content/common")
                         .Include("~/Content/bootstrap.css", new CssPathTransform())
-                        .Include("~/Content/loadmask/jquery.loadmask.css", new CssPathTransform()));
+                        .Include("~/Content/loadmask/jquery.loadmask.css", new CssPathTransform())
+                        .Include("~/Content/colorpicker/colorPicker.css", new CssPathTransform()));
 
             // add app contente bundles
             bundles.Add(new StyleBundle("~/Content/appcss")
                 .Include("~/Content/css/App.css")
-                
+
                 // Pines bundles
                 .Include("~/Content/pnotify/jquery.pnotify.default.css")
                 .Include("~/Content/pnotify/jquery.pnotify.default.icons.css")
-
-                // color picker bundle
-                .Include("~/Content/colorpicker/colorPicker.css")
             );
 
             AddAppLessBundle(bundles);
