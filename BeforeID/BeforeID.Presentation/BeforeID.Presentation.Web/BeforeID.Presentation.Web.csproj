@@ -150,9 +150,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\colorpicker\arrow.gif" />
-    <Content Include="Content\colorpicker\arrow.png" />
-    <Content Include="Content\colorpicker\colorPicker.css" />
+    <Content Include="Content\colorpicker\arrow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\colorpicker\arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\colorpicker\colorPicker.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\css\App.css">
       <DependentUpon>App.less</DependentUpon>
     </Content>
