@@ -3,6 +3,7 @@
     var app = (function () {
 
         var init = function () {
+            bid.pmsg.Init();
         };
 
         return {

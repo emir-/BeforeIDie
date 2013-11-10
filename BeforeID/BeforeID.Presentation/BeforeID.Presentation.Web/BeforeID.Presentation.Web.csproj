@@ -158,6 +158,8 @@
     </Content>
     <Content Include="Content\loadmask\images\loading.gif" />
     <Content Include="Content\loadmask\jquery.loadmask.css" />
+    <Content Include="Content\pnotify\jquery.pnotify.default.css" />
+    <Content Include="Content\pnotify\jquery.pnotify.default.icons.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -182,6 +184,7 @@
     <Content Include="Scripts\jquery.isotope.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.loadmask.js" />
+    <Content Include="Scripts\jquery.pnotify.min.js" />
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\MIT-LICENSE.txt" />
@@ -192,6 +195,7 @@
     <Content Include="Scripts\src\Common\AmplifyKeys.js" />
     <Content Include="Scripts\src\Common\Bindings.js" />
     <Content Include="Scripts\src\Common\LoadmaskWrapper.js" />
+    <Content Include="Scripts\src\Common\PinesWrapper.js" />
     <Content Include="Scripts\src\Main\App.js" />
     <Content Include="Scripts\src\Main\namespace.js" />
     <Content Include="Scripts\src\Pages\Posts\PostPageViewModel.js" />
@@ -222,6 +226,10 @@
     <Content Include="Views\Shared\_Content_Loading.cshtml" />
     <Content Include="Views\Shared\_Script_Loading.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
+    <Content Include="Scripts\jquery.pnotify.js" />
+    <Content Include="Scripts\jquery.pnotify.min.js.map">
+      <DependentUpon>jquery.pnotify.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BeforeID.Common\BeforeID.Common.Infrastructure\BeforeID.Common.Infrastructure.csproj">

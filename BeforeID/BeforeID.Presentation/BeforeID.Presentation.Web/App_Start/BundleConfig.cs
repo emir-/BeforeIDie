@@ -17,8 +17,9 @@ namespace BeforeID
                         "~/Scripts/knockout-3.0.0.js",
                         "~/Scripts/amplify.js",
                         "~/Scripts/jquery.isotope.js",
-                        "~/Scripts/jquery.loadmask.js"
-                        ));
+                        "~/Scripts/jquery.loadmask.js",
+                        "~/Scripts/jquery.pnotify.js"
+                ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -33,17 +34,19 @@ namespace BeforeID
             // add app script bundles
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
                 "~/Scripts/src/Main/namespace.js",
-                "~/Scripts/src/Main/App.js",
-
+                
                 // utilities
                 "~/Scripts/src/Common/AmplifyKeys.js",
                 "~/Scripts/src/Common/Bindings.js",
                 "~/Scripts/src/Common/LoadmaskWrapper.js",
+                "~/Scripts/src/Common/PinesWrapper.js",
 
                 // Post Page View Models
                 "~/Scripts/src/Pages/Posts/Utility/PostFormViewModel.js",
                 "~/Scripts/src/Pages/Posts/Utility/PostsOverviewViewModel.js",
-                "~/Scripts/src/Pages/Posts/PostPageViewModel.js"
+                "~/Scripts/src/Pages/Posts/PostPageViewModel.js",
+
+                "~/Scripts/src/Main/App.js"
             ));
 
             #endregion
@@ -58,6 +61,10 @@ namespace BeforeID
             // add app contente bundles
             bundles.Add(new StyleBundle("~/Content/appcss")
                 .Include("~/Content/css/App.css")
+                
+                // Pines bundles
+                .Include("~/Content/pnotify/jquery.pnotify.default.css")
+                .Include("~/Content/pnotify/jquery.pnotify.default.icons.css")
             );
 
             AddAppLessBundle(bundles);
