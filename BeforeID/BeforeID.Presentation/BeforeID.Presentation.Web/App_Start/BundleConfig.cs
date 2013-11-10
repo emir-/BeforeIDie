@@ -14,7 +14,8 @@ namespace BeforeID
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/knockout-3.0.0.js",
-                        "~/Scripts/amplify.js"
+                        "~/Scripts/amplify.js",
+                        "~/Scripts/jquery.isotope.js"
                         ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

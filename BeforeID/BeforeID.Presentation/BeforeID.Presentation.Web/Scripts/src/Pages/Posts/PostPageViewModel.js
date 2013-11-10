@@ -40,7 +40,7 @@
             
             // Chile view models
             Form: form,
-            Posts: posts,
+            PostsOverview: posts,
             
             // Public initialization
             Init: init

@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 using BeforeID.Common.ViewModels.PostViewModels;
 using BeforeID.Data.Mapping.ViewModelMappings.CommonMappings;
 using BeforeID.Data.Mapping.ViewModelMappings.PostMappings;
 using BeforeID.Data.Model.Context;
+using BeforeID.Data.Model.Entities;
 
 namespace BeforeID.Presentation.Web.Controllers.Data
 {
@@ -23,6 +26,27 @@ namespace BeforeID.Presentation.Web.Controllers.Data
         }
 
         #endregion
+
+        [HttpPost]
+        public ActionResult ReadPosts(PostsQueryModel queryModel)
+        {
+            try
+            {
+                var postsQuery = _bidContext.Posts
+                    .AsQueryable()
+                    .Include(t => t.Category)
+                    .OrderBy(t => t.DateCreated)
+                    .Skip(queryModel.Skip)
+                    .Take(queryModel.Take);
+
+                var viewModelObjects = postsQuery.ToList().Select(PostViewModelMappings.GetPostDisplayViewModel);
+                return Json(JsonResultMappings.Success(viewModelObjects));
+            }
+            catch (Exception ex)
+            {
+                return Json(JsonResultMappings.Error());
+            }
+        }
 
         /// <summary>
         /// Save a post
