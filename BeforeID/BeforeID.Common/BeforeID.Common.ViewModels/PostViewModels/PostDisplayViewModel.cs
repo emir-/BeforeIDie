@@ -10,6 +10,8 @@ namespace BeforeID.Common.ViewModels.PostViewModels
 
         public string PostText { get; set; }
 
+        public string PostColor { get; set; }
+
         public string Date { get; set; }
     }
 }

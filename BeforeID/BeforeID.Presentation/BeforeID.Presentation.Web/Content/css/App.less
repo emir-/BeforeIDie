@@ -39,6 +39,14 @@
                 box-shadow: none !important;
             }
         }
+
+        #post-color{
+            margin-top:10px;
+
+            &+div{
+                margin-top:20px;
+            }
+        }
     }
 
     #posts-overview {
@@ -51,6 +59,8 @@
             padding-top: 20px !important;
             padding-bottom: 20px !important;
 
+            /*Add the different color posts*/
+            
             .post-text-content {
                 float:left;
                 width:80%;
@@ -58,10 +68,11 @@
 
                 .post-view-category-text {
                     font-weight: bold;
+                    color:#000;
                 }
 
                 .post-view-post-text {
-                    color: #808080;
+                    color:#000;
                 }
             }
 
@@ -73,7 +84,8 @@
                 .post-view-date {
                     font-style: normal;
                     float:right;
-                    }
+                    border:1px solid #000;
+                }
             }
         }
 

@@ -12,7 +12,8 @@ namespace BeforeID.Data.Mapping.ViewModelMappings.PostMappings
             var post = new Post()
                        {
                            CategoryId = viewModel.PostCategoryId,
-                           Text = viewModel.PostText
+                           Text = viewModel.PostText,
+                           ColorCode = viewModel.PostColor
                        };
 
             return post;
@@ -29,6 +30,7 @@ namespace BeforeID.Data.Mapping.ViewModelMappings.PostMappings
                                 Id = post.Id,
                                 CategoryText = post.Category.CategoryText,
                                 PostText = post.Text,
+                                PostColor = string.IsNullOrEmpty(post.ColorCode) ? "#FFF" : post.ColorCode,
                                 Date = post.DateCreated.ToShortDateString() + " " + post.DateCreated.ToShortTimeString()
                             };
 

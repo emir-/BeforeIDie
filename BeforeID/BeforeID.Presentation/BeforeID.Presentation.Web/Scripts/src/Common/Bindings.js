@@ -1,8 +1,9 @@
-﻿(function () {
+﻿(function (bid, $) {
 
     /*
         On enter keypress binding, that calls a function 
         when the enter key is pressed inside an input
+        ========================================================================================================
     */
     ko.bindingHandlers.onEnterKey = {
         init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
@@ -26,9 +27,9 @@
     };
 
     /*
-        Binding for the max character counter
+        Binding for the max character counter for text inputs
+        ========================================================================================================
     */
-
 
     ko.bindingHandlers.maxCharacters = {
         init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
@@ -49,4 +50,31 @@
             return true;
         }
     };
+
+    /*
+       Binding for the color picker input
+       ========================================================================================================
+   */
+
+    ko.bindingHandlers.colorPicker = {
+        init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            // call default value init method
+            ko.bindingHandlers.value.init(element, valueAccessor, allBindings, viewModel, bindingContext);
+
+            if ($(element).data("picker-init") !== true) {
+                $(element).colorPicker();
+                $(element).data("picker-init", true);
+            }
+            
+            return true;
+        },
+
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            // call default value upddate method
+            ko.bindingHandlers.value.update(element, valueAccessor, allBindings, viewModel, bindingContext);
+            $(element).change();
+            return true;
+        }
+    };
+
 })(window.BID = window.BID || {}, jQuery);

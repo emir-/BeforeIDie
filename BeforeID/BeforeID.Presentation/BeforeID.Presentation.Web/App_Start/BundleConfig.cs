@@ -18,7 +18,8 @@ namespace BeforeID
                         "~/Scripts/amplify.js",
                         "~/Scripts/jquery.isotope.js",
                         "~/Scripts/jquery.loadmask.js",
-                        "~/Scripts/jquery.pnotify.js"
+                        "~/Scripts/jquery.pnotify.js",
+                        "~/Scripts/jquery.colorPicker.js"
                 ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -65,6 +66,9 @@ namespace BeforeID
                 // Pines bundles
                 .Include("~/Content/pnotify/jquery.pnotify.default.css")
                 .Include("~/Content/pnotify/jquery.pnotify.default.icons.css")
+
+                // color picker bundle
+                .Include("~/Content/colorpicker/colorPicker.css")
             );
 
             AddAppLessBundle(bundles);

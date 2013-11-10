@@ -7,17 +7,17 @@
            ================================================================================================
        */
 
-        var postModel = function (text, catId) {
+        var postModel = function (text, catId, colorCode) {
             this.PostCategoryId = catId;
             this.PostText = text;
+            this.PostColor = colorCode;
         };
 
-
         // the number of milliseconds where the user can post again.
-        var timeConstraint = 120000;
+        var timeConstraint = 0;
 
         // keeps track of the current milliseconds from last post
-        var currentCounter = 120000;
+        var currentCounter = 0;
 
         // the interval at which timing  ( current counter ) is updated.
         var tick = 100;
@@ -30,6 +30,8 @@
         */
 
         var postText = ko.observable("");
+        
+        var postColor = ko.observable("");
 
         var categoryId = ko.observable(null);
 
@@ -60,10 +62,11 @@
                 return false;
             }
 
-            var post = new postModel(postText(), categoryId());
+            var post = new postModel(postText(), categoryId(), postColor());
 
             // clear the post text
             postText("");
+            postColor(bid.App.DefaultPostColor);
 
             if (canPost()) {
                 bid.load.MaskHtml();
@@ -113,7 +116,7 @@
            Ajax Handlers
            ================================================================================================
        */
-
+        
         // success callback for saving posts
         var savePostSuccess = function (response, status, object) {
             bid.load.ClearHtml();
@@ -141,6 +144,7 @@
         return {
             // Observables
             PostText: postText,
+            PostColor: postColor,
 
             // Public functions
             Init: init,

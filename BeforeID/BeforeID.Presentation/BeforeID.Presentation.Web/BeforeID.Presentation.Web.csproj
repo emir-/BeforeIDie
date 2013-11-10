@@ -150,6 +150,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colorpicker\arrow.gif" />
+    <Content Include="Content\colorpicker\arrow.png" />
+    <Content Include="Content\colorpicker\colorPicker.css" />
     <Content Include="Content\css\App.css">
       <DependentUpon>App.less</DependentUpon>
     </Content>
@@ -181,6 +184,8 @@
     <Content Include="Scripts\GPL-LICENSE.txt" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.colorPicker.js" />
+    <Content Include="Scripts\jquery.colorPicker.min.js" />
     <Content Include="Scripts\jquery.isotope.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.loadmask.js" />
@@ -229,6 +234,9 @@
     <Content Include="Scripts\jquery.pnotify.js" />
     <Content Include="Scripts\jquery.pnotify.min.js.map">
       <DependentUpon>jquery.pnotify.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.colorPicker.min.js.map">
+      <DependentUpon>jquery.colorPicker.js</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
