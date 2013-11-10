@@ -16,6 +16,8 @@ namespace BeforeID.Presentation.Web.Controllers.Data
 
         private readonly BidContext _bidContext;
 
+        private readonly int MaxTextCount = 90;
+
         #endregion
 
         #region Constructor
@@ -63,6 +65,13 @@ namespace BeforeID.Presentation.Web.Controllers.Data
 
                 try
                 {
+                    var shouldSave = CheckPostRules(post);
+
+                    if (!shouldSave)
+                    {
+                        return Json(JsonResultMappings.Error());
+                    }
+
                     _bidContext.Posts.Add(post);
                     _bidContext.SaveChanges();
 
@@ -83,5 +92,27 @@ namespace BeforeID.Presentation.Web.Controllers.Data
                 return Json(JsonResultMappings.Error());
             }
         }
+
+        #region Private utilities
+
+        /// <summary>
+        /// Check if a post falls under the specific guidelines and rules
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        private bool CheckPostRules(Post post)
+        {
+            // if somehow a post text is longer thant the contrained ammount 
+            // we are going to cut the text
+
+            if (post.Text.Length > MaxTextCount)
+            {
+                post.Text = post.Text.Substring(0, MaxTextCount);
+            }
+
+            return true;
+        }
+
+        #endregion
     }
 }

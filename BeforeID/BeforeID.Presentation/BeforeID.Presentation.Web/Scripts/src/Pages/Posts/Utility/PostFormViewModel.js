@@ -16,7 +16,7 @@
             Observables
             ================================================================================================
         */
-
+        
         var postText = ko.observable("");
 
         var categoryId = ko.observable(null);
