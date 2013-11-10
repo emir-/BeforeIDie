@@ -22,6 +22,8 @@
         // the interval at which timing  ( current counter ) is updated.
         var tick = 100;
 
+        var interval = null;
+
         /*
             Observables
             ================================================================================================
@@ -81,19 +83,26 @@
                 // given time constraint
                 canPost(false);
 
-                setInterval(function () {
+                // set an interval decreasing the current counter
+                var intervalFlag = setInterval(function () {
                     if (currentCounter <= 0) {
+                        // rest current counter and the post flag
                         currentCounter = timeConstraint;
+
                         canPost(true);
+
+                        // stop counting untill new flag
+                        clearInterval(intervalFlag);
+
                     } else {
                         currentCounter = currentCounter - tick;
                     }
                 }, tick);
 
             } else {
-                var minutes = Math.round((currentCounter / 1000) / 60);
+                var minutes = Math.floor((currentCounter / 1000) / 60);
                 var seconds = Math.round((currentCounter / 1000) % 60);
-
+                
                 bid.pmsg.Info("Пост", "Не може да се постира веднаш по последниот пост. Мора да почекате " + minutes + ":" + seconds + " мин.");
             }
 
