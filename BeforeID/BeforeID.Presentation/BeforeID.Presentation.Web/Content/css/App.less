@@ -9,14 +9,12 @@
         border-bottom: 1px solid #ccc;
 
         #category-text {
-            font-size: 20px;
-            font-weight:bold;
-            font-style:italic;
-            
-            margin-top:3px;
-
-            padding-right:0px !important;
-            text-align:right !important;
+            font-size: 21px;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 3px;
+            padding-right: 0px !important;
+            text-align: right !important;
         }
 
         #post-text {
@@ -27,20 +25,17 @@
             border-radius: 0px;
             outline: none;
             box-shadow: none !important;
+            padding-left: 0px !important;
+            font-size: 21px;
+            font-weight: bold;
+            font-style: italic;
 
-            padding-left:0px !important;
-            
-            font-size:20px;
-            font-weight:bold;
-            font-style:italic;
-            
             &:hover {
                 outline: none;
                 border-bottom: 1px solid #ccc;
                 -webkit-border-radius: 0px;
                 -moz-border-radius: 0px;
                 border-radius: 0px;
-
                 box-shadow: none !important;
             }
         }
@@ -49,5 +44,27 @@
     #posts-overview {
         padding-top: 10px;
         padding-bottom: 30px;
+
+        /*The list item containing the post */
+        .post-box {
+
+            font-size:18px;
+            font-style:italic;
+
+            padding-top:20px !important;
+            padding-bottom:20px !important;
+            
+            .post-view-category-text {
+                font-weight:bold;
+            }
+
+            .post-view-post-text {
+                color: #808080;
+            }
+
+            .post-view-date{
+                font-style:normal;
+            }
+        }
     }
 }

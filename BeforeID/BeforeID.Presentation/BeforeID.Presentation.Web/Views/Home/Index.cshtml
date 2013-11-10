@@ -25,15 +25,16 @@
             </div>
         </div>
     </div>
-
+    
     <div id="posts-overview" data-bind="with:PostsOverview">
 
         <div class="row">
             <div class="col-xs-12">
                 <ul class="list-group" data-bind="foreach:Posts,visible:Posts().length > 0 ">
-                    <li class="list-group-item" data-bind=" attr:{'data-post-id':Id}">
-                        <span class="badge" data-bind="text:Date"></span>
-                        <span data-bind="text:Text"></span>
+                    <li class="list-group-item post-box" data-bind=" attr:{'data-post-id':Id}">
+                        <span class="badge post-view-date" data-bind="text:Date"></span>
+                        <span class="post-view-category-text" data-bind="text:CategoryText"></span>
+                        <span class="post-view-post-text" data-bind="text:PostText"></span>
                     </li>
                 </ul>
                 <button class="btn btn-default col-xs-12" data-bind="click:LoadMorePosts">

@@ -27,7 +27,8 @@ namespace BeforeID.Data.Mapping.ViewModelMappings.PostMappings
             var viewModel = new PostDisplayViewModel()
                             {
                                 Id = post.Id,
-                                Text = post.Category.CategoryText + " " + post.Text,
+                                CategoryText = post.Category.CategoryText,
+                                PostText = post.Text,
                                 Date = post.DateCreated.ToShortDateString() + " " + post.DateCreated.ToShortTimeString()
                             };
 
