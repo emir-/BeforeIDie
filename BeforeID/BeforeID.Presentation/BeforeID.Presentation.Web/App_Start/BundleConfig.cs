@@ -13,7 +13,8 @@ namespace BeforeID
             // add jquery scropt bundles
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/knockout-3.0.0.js"
+                        "~/Scripts/knockout-3.0.0.js",
+                        "~/Scripts/amplify.js"
                         ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -30,6 +31,9 @@ namespace BeforeID
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
                 "~/Scripts/src/Main/namespace.js",
                 "~/Scripts/src/Main/App.js",
+
+                // utilities
+                "~/Scripts/src/Common/AmplifyKeys.js",
 
                 // Post Page View Models
                 "~/Scripts/src/Pages/Posts/Utility/PostFormViewModel.js",

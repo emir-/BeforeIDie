@@ -1,6 +1,8 @@
-﻿@model BeforeID.Common.ViewModels.Page.PostPageViewModel
+﻿@model BeforeID.Common.ViewModels.PageViewModels.PostPageViewModel
 
 <div id="post-page">
+    
+    <input type="hidden" id="hidden-category-id" value="@Model.CategoryId"/>
     
     <div id="post-form" data-bind="with:Form">
         <div class="row">

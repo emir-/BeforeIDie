@@ -16,13 +16,26 @@
         */
 
         var init = function () {
-            form.Init();
+            var categoryId = getCategoryFromHiddenInput();
+
+            form.Init(categoryId);
+            
             posts.Init();
         };
         
         /*
+           Private utilities
+           ==================================================================
+       */
+        var getCategoryFromHiddenInput = function() {
+            return $("#hidden-category-id").val();
+        };
+          
+        /*
             RMP
+            ==================================================================
         */
+        
         return {
             
             // Chile view models

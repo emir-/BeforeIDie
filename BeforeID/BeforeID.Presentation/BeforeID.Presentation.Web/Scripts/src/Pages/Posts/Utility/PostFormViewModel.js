@@ -3,18 +3,34 @@
     var viewModel = function () {
 
         /*
+           Private properties
+           ================================================================================================
+       */
+
+        var postModel = function (text, catId) {
+            this.PostCategoryId = catId;
+            this.PostText = text;
+        };
+
+        /*
             Observables
             ================================================================================================
         */
 
         var postText = ko.observable("");
-        
+
+        var categoryId = ko.observable(null);
+
         /*
            Public functions
            ================================================================================================
        */
 
-        var init = function () {
+        var init = function (catId) {
+
+            // initialize the category id
+            categoryId(catId);
+
         };
 
         /*
@@ -27,11 +43,47 @@
         */
 
         var publishPost = function () {
-            alert("Publishing post");
+            var post = new postModel(postText(), categoryId());
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(post),
+                url: "/PostData/Save",
+
+                success: savePostSuccess,
+                error: savePostError
+            });
+        };
+
+        /*
+           Ajax Handlers
+           ================================================================================================
+       */
+
+        // success callback for saving posts
+        var savePostSuccess = function (response, status, object) {
+            if (response.Status) {
+                // clear the post text
+                postText("");
+                
+                // tell whoever cares that a new post has been saved
+                amplify.publish(bid.AmplifyKeys.ActionKeys.NewPostSaved);
+                
+            } else {
+                console.log("Post Success callback with failed response");
+            }
+        };
+
+        // error callback for saving posts
+        var savePostError = function (object, status, thrown) {
+            console.log("Post Error callback");
         };
 
         /*
             RMP
+            =====================================================================
         */
         return {
             // Observables

@@ -13,12 +13,23 @@
        */
         
         var init = function () {
+            // subscribe to the new post added
+            // so we can refresh the post overview
+            amplify.subscribe(bid.AmplifyKeys.ActionKeys.NewPostSaved, handleNewPostAdded);
         };
         
         /*
            Utilities
            ==========================================
        */
+        
+        /*
+            Amplify message handler for new post added
+        */
+
+        var handleNewPostAdded = function() {
+            alert("Handling new post save from post overview view model");
+        };
 
         /*
           RMP

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using BeforeID.Common.Infrastructure.Registries;
-using BeforeID.Data.Mapping.ViewModelMappings.Page;
+using BeforeID.Data.Mapping.ViewModelMappings.PageMappings;
 using BeforeID.Data.Model.Context;
 
 namespace BeforeID.Controllers
