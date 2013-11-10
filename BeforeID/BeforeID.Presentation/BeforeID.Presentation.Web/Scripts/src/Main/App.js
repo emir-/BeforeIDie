@@ -2,8 +2,7 @@
 
     var app = (function () {
 
-        var init = function() {
-            console.log("Initializing app");
+        var init = function () {
         };
 
         return {

@@ -77,8 +77,12 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -140,6 +144,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\UrlTransforms\CssPathTransform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +163,9 @@
     <Content Include="Global.asax" />
     <Content Include="Noesis.Javascript\x64\Noesis.Javascript.dll" />
     <Content Include="Noesis.Javascript\x86\Noesis.Javascript.dll" />
+    <None Include="Properties\PublishProfiles\LocalFile.pubxml" />
+    <None Include="Properties\PublishProfiles\preddaumram - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\preddaumram - Web Deploy.pubxml" />
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />
     <Content Include="Scripts\amplify.min.js" />
@@ -208,7 +216,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-1.10.2.min.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Shared\_Content_Loading.cshtml" />
     <Content Include="Views\Shared\_Script_Loading.cshtml" />
     <Content Include="Scripts\underscore.min.map" />

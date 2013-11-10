@@ -1,4 +1,5 @@
 ﻿using System.Web.Optimization;
+using BeforeID.Presentation.Web.Infrastructure.UrlTransforms;
 using BundleTransformer.Core.Transformers;
 
 namespace BeforeID
@@ -12,7 +13,7 @@ namespace BeforeID
 
             // add jquery scropt bundles
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-1.10.2.js",
                         "~/Scripts/knockout-3.0.0.js",
                         "~/Scripts/amplify.js",
                         "~/Scripts/jquery.isotope.js",
@@ -50,13 +51,13 @@ namespace BeforeID
             #region Content Bunlding
 
             // add basic third party content bundles
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/common")
+                        .Include("~/Content/bootstrap.css", new CssPathTransform())
+                        .Include("~/Content/loadmask/jquery.loadmask.css", new CssPathTransform()));
 
             // add app contente bundles
             bundles.Add(new StyleBundle("~/Content/appcss")
-                .Include("~/Content/css/App.less", new CssRewriteUrlTransform())
-                .Include("~/Content/loadmask/jquery.loadmask.css", new CssRewriteUrlTransform())
+                .Include("~/Content/css/App.css")
             );
 
             AddAppLessBundle(bundles);

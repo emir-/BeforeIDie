@@ -44,7 +44,7 @@ namespace BeforeID.Presentation.Web.Controllers.Data
                 var viewModelObjects = postsQuery.ToList().Select(PostViewModelMappings.GetPostDisplayViewModel);
                 return Json(JsonResultMappings.Success(viewModelObjects));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return Json(JsonResultMappings.Error());
             }
@@ -82,7 +82,7 @@ namespace BeforeID.Presentation.Web.Controllers.Data
 
                     return Json(JsonResultMappings.Success(PostViewModelMappings.GetPostDisplayViewModel(post)));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return Json(JsonResultMappings.Error());
                 }
