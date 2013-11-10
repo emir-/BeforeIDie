@@ -35,7 +35,7 @@ namespace BeforeID.Presentation.Web.Controllers.Data
                 var postsQuery = _bidContext.Posts
                     .AsQueryable()
                     .Include(t => t.Category)
-                    .OrderBy(t => t.DateCreated)
+                    .OrderByDescending(t => t.DateCreated)
                     .Skip(queryModel.Skip)
                     .Take(queryModel.Take);
 
@@ -66,7 +66,12 @@ namespace BeforeID.Presentation.Web.Controllers.Data
                     _bidContext.Posts.Add(post);
                     _bidContext.SaveChanges();
 
-                    return Json(JsonResultMappings.Success(post));
+                    // reget the post so we get the category info
+                    post = _bidContext.Posts
+                        .Include(p => p.Category)
+                        .FirstOrDefault(t => t.Id == post.Id);
+
+                    return Json(JsonResultMappings.Success(PostViewModelMappings.GetPostDisplayViewModel(post)));
                 }
                 catch (Exception ex)
                 {

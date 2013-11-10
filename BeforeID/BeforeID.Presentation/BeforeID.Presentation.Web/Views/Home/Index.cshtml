@@ -31,8 +31,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul class="list-group" data-bind="foreach:Posts,visible:Posts().length > 0 ">
-                    <li class="list-group-item" data-bind="text:Text, attr:{'data-post-id':Id}">
-                        
+                    <li class="list-group-item" data-bind=" attr:{'data-post-id':Id}">
+                        <span class="badge" data-bind="text:Date"></span>
+                        <span data-bind="text:Text"></span>
                     </li>
                 </ul>
                 <button class="btn btn-default col-xs-12" data-bind="click:LoadMorePosts">

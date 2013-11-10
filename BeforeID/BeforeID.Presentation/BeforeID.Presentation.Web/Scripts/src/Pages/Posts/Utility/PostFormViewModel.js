@@ -43,8 +43,12 @@
         */
 
         var publishPost = function () {
-            var post = new postModel(postText(), categoryId());
+            if (postText() == "" || postText().trim() == "") {
+                return false;
+            }
 
+            var post = new postModel(postText(), categoryId());
+            
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -69,7 +73,7 @@
                 postText("");
                 
                 // tell whoever cares that a new post has been saved
-                amplify.publish(bid.AmplifyKeys.ActionKeys.NewPostSaved);
+                amplify.publish(bid.AmplifyKeys.ActionKeys.NewPostSaved, response.Data);
                 
             } else {
                 console.log("Post Success callback with failed response");

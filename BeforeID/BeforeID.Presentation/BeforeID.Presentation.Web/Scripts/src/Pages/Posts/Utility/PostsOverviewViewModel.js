@@ -1,6 +1,7 @@
 ﻿(function (bid, $) {
 
     var viewModel = function () {
+
         /*
             Config Properties
             ==========================================
@@ -64,8 +65,10 @@
             Amplify message handler for new post added
         */
 
-        var handleNewPostAdded = function () {
-            getPosts();
+        var handleNewPostAdded = function (data) {
+            // data is the new post
+            // this will add the new post at the beginning of the array
+            posts.splice(0, 0, data);
         };
 
         /*
@@ -106,6 +109,7 @@
           RMP
           ==========================================
         */
+        
         return {
             // public functionality
             Init: init,
