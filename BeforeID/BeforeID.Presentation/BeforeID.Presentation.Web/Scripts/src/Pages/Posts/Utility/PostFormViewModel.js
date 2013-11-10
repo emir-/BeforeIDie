@@ -27,10 +27,8 @@
        */
 
         var init = function (catId) {
-
             // initialize the category id
             categoryId(catId);
-
         };
 
         /*

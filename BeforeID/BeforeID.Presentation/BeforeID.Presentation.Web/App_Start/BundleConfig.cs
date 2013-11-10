@@ -35,6 +35,7 @@ namespace BeforeID
 
                 // utilities
                 "~/Scripts/src/Common/AmplifyKeys.js",
+                "~/Scripts/src/Common/Bindings.js",
 
                 // Post Page View Models
                 "~/Scripts/src/Pages/Posts/Utility/PostFormViewModel.js",
