@@ -151,6 +151,8 @@
     <Content Include="Content\css\App.min.css">
       <DependentUpon>App.less</DependentUpon>
     </Content>
+    <Content Include="Content\loadmask\images\loading.gif" />
+    <Content Include="Content\loadmask\jquery.loadmask.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -171,6 +173,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.isotope.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.loadmask.js" />
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\MIT-LICENSE.txt" />
@@ -180,6 +183,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\src\Common\AmplifyKeys.js" />
     <Content Include="Scripts\src\Common\Bindings.js" />
+    <Content Include="Scripts\src\Common\LoadmaskWrapper.js" />
     <Content Include="Scripts\src\Main\App.js" />
     <Content Include="Scripts\src\Main\namespace.js" />
     <Content Include="Scripts\src\Pages\Posts\PostPageViewModel.js" />

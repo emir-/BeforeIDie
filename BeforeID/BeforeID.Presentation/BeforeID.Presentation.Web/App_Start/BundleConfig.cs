@@ -15,7 +15,8 @@ namespace BeforeID
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/knockout-3.0.0.js",
                         "~/Scripts/amplify.js",
-                        "~/Scripts/jquery.isotope.js"
+                        "~/Scripts/jquery.isotope.js",
+                        "~/Scripts/jquery.loadmask.js"
                         ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -36,6 +37,7 @@ namespace BeforeID
                 // utilities
                 "~/Scripts/src/Common/AmplifyKeys.js",
                 "~/Scripts/src/Common/Bindings.js",
+                "~/Scripts/src/Common/LoadmaskWrapper.js",
 
                 // Post Page View Models
                 "~/Scripts/src/Pages/Posts/Utility/PostFormViewModel.js",
@@ -46,14 +48,16 @@ namespace BeforeID
             #endregion
 
             #region Content Bunlding
-            
+
             // add basic third party content bundles
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css"));
 
             // add app contente bundles
-            bundles.Add(new StyleBundle("~/Content/appcss").Include(
-                      "~/Content/css/App.less", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/Content/appcss")
+                .Include("~/Content/css/App.less", new CssRewriteUrlTransform())
+                .Include("~/Content/loadmask/jquery.loadmask.css", new CssRewriteUrlTransform())
+            );
 
             AddAppLessBundle(bundles);
 

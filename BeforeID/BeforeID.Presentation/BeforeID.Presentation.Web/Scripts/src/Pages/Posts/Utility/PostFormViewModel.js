@@ -46,6 +46,8 @@
             }
 
             var post = new postModel(postText(), categoryId());
+
+            bid.load.MaskHtml();
             
             $.ajax({
                 type: "POST",
@@ -66,6 +68,7 @@
 
         // success callback for saving posts
         var savePostSuccess = function (response, status, object) {
+            bid.load.ClearHtml();
             if (response.Status) {
                 // clear the post text
                 postText("");
@@ -80,6 +83,7 @@
 
         // error callback for saving posts
         var savePostError = function (object, status, thrown) {
+            bid.load.ClearHtml();
             console.log("Post Error callback");
         };
 

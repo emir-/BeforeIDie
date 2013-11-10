@@ -52,7 +52,9 @@
                 success: readPostsSuccess,
                 error: readPostError
             };
-
+            
+            // Mask the html before loading posts
+            bid.load.MaskHtml();
             $.ajax(ajaxConfigObject);
         };
 
@@ -77,7 +79,8 @@
         */
 
         // Success callback 
-        var readPostsSuccess = function (response, status,object) {
+        var readPostsSuccess = function (response, status, object) {
+            bid.load.ClearHtml();
             if (response.Status) {
                 var responseData = response.Data;
                 
@@ -93,6 +96,7 @@
 
         // Error callback
         var readPostError = function (object, status, thrown) {
+            bid.load.ClearHtml();
             console.log("Read post error");
         };
         
