@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label class="col-xs-2" id="category-text" for="post-text">@Model.CategoryText</label>
                         <div class="col-xs-9">
-                            <input id="post-text" placeholder="Сакам да...." class="form-control" type="text" data-bind="value:PostText, valueUpdate:'afterkeydown', onEnterKey:PublishPost" />
+                            <input id="post-text" placeholder="Сакам да...." class="form-control" type="text" data-bind="value:PostText, valueUpdate:'afterkeydown', onEnterKey:PublishPost, maxCharacters:90" />
                         </div>
 
                         <div class="col-xs-1">
@@ -25,19 +25,31 @@
             </div>
         </div>
     </div>
-    
+
     <div id="posts-overview" data-bind="with:PostsOverview">
 
         <div class="row">
             <div class="col-xs-12">
                 <ul class="list-group" data-bind="foreach:Posts,visible:Posts().length > 0 ">
                     <li class="list-group-item post-box" data-bind=" attr:{'data-post-id':Id}">
-                        <span class="badge post-view-date" data-bind="text:Date"></span>
-                        <span class="post-view-category-text" data-bind="text:CategoryText"></span>
-                        <span class="post-view-post-text" data-bind="text:PostText"></span>
+
+                        <div class="post-text-content">
+                            <span class="post-view-category-text" data-bind="text:CategoryText"></span>
+
+                            <span class="post-view-post-text" data-bind="text:PostText"></span>
+                        </div>
+
+                        <div class="post-utility-content">
+                            <span class="label label-primary post-view-date" data-bind="text:Date"></span>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+
                     </li>
                 </ul>
-                <button class="btn btn-default col-xs-12" data-bind="click:LoadMorePosts">
+
+                <button id="load-more-posts-action" class="btn btn-default col-xs-12" data-bind="click:LoadMorePosts">
+                    <i class="glyphicon glyphicon-download"></i>
                     Уште...
                 </button>
             </div>

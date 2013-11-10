@@ -44,27 +44,41 @@
     #posts-overview {
         padding-top: 10px;
         padding-bottom: 30px;
-
         /*The list item containing the post */
         .post-box {
+            font-size: 18px;
+            font-style: italic;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
 
-            font-size:18px;
-            font-style:italic;
+            .post-text-content {
+                float:left;
+                width:80%;
+                display:inline-block;
 
-            padding-top:20px !important;
-            padding-bottom:20px !important;
-            
-            .post-view-category-text {
-                font-weight:bold;
+                .post-view-category-text {
+                    font-weight: bold;
+                }
+
+                .post-view-post-text {
+                    color: #808080;
+                }
             }
 
-            .post-view-post-text {
-                color: #808080;
-            }
+            .post-utility-content {
 
-            .post-view-date{
-                font-style:normal;
+                width:15%;
+                float: right;
+                
+                .post-view-date {
+                    font-style: normal;
+                    float:right;
+                    }
             }
+        }
+
+        #load-more-posts-action {
+            font-size: 19px;
         }
     }
 }

@@ -14,11 +14,35 @@
 
             $(element).on('keypress', function (e) {
                 var code = e.keyCode || e.which;
-                console.log("KEYPRESS:" + code);
+
                 if (code == 13) { //Enter keycode
                     // call the bound function
-                    console.log("ENTER");
                     callbackFunction();
+                }
+            });
+
+            return true;
+        }
+    };
+
+    /*
+        Binding for the max character counter
+    */
+
+
+    ko.bindingHandlers.maxCharacters = {
+        init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            var maxCharacters = valueAccessor();
+
+            if (typeof maxCharacters != "number") {
+                return false;
+            }
+
+            $(element).on('keyup', function (e) {
+                var value = $(this).val();
+
+                if (value.length > maxCharacters) {
+                    $(this).val(value.substring(0, maxCharacters));
                 }
             });
 
